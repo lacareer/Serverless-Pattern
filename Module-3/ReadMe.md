@@ -1258,7 +1258,7 @@ Or, you can repeat Step 1 to get a new ID_TOKEN.
 
   Go to ReadMe-Dashboard.md
 
-  <!-- Module 2 completed -->
+<!-- Module 2 completed -->
 Before you delete resources... 
 
 Before you delete the workshop, we recommend reviewing the stack in the CloudFormation console so you can see the value of SAM templates:
@@ -1276,8 +1276,16 @@ The SAM template is less than about 450 lines, but it expands to nearly a thousa
 <!-- Delete your stack? -->
 
 STOP!!! Wait! Read me!
-If you want to continue with another module or deep dive, skip this step. You may need your stack!
+If you want to continue with another module or deep dive, skip this step and go to "Module 3 setup" below. You may need your stack!
 
 <!-- If you are certain you do not want to continue... you can run the following command to delete the stack (accept default values when prompted): -->
 
   sam delete --stack-name ws-serverless-patterns-users
+
+<!-- Module 3 setup -->
+
+  Go to Readme-Setup.md
+
+<!-- Module 3 tasks -->
+
+  Go to ReadMe-Module-3.md
