@@ -335,6 +335,7 @@ Run the following commands:
 
 🙆 If you encounter a Validation Error similar to the following: "(ValidationError) when calling the DeleteStack operation: Role ws-patterns-pipeline-PipelineStackCloudFormationEx-XXXXXXXXXXXX is invalid or cannot be assumed", take these steps:
 
+# This suggestion did not work for me
 Open AWS Management Console
 Navigate to IAM (Identity and Access Management)
 Create a new role using the role name from your error message and:
@@ -348,5 +349,21 @@ select CloudFormation service for the role.
 Associate the policy AdministratorAccess with the new role
 Try the sam delete command again
 After the deletion completes, you must manually delete that role.
+
+# However, the below worked for me (https://repost.aws/knowledge-center/cloudformation-role-arn-error)
+it's a role problem, even if the user has the right policies you might do the following:
+
+Open the IAM console.
+In the navigation pane, choose Roles.
+In the Role name column, choose the IAM role that's mentioned in the error message that you received.
+If the roles doesn't exist:
+
+Create a new IAM role (CloudFormationFullAccess)
+
+Confirm that the new IAM role has the required permissions for AWS CloudFormation to perform create, update, or delete operations on resources in your stack.
+
+then try
+
+aws cloudformation delete-stack --stack-name YourStackName --role-arn arn:aws:iam::XXXXX:role/CloudFormationFullAccess (or the role name assigned)
 
   
